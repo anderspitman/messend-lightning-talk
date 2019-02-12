@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+          <h2>What's in a game?</h2>
+        </section>
+
+				<section>
+          <img src='images/reliable_vs_unreliable.png'></img>
+        </section>
+
+				<section>
+          <img src='images/stream_vs_message.png'></img>
+        </section>
+
+				<section>
+          <img src='images/reliable_message.png'></img>
+        </section>
+
+				<section>
+          <h2>Goal: Build an extremely simple messaging library on top of TCP</h2>
+        </section>
+
+				<section>
+          <h2>Initial plan: do it in C</h2>
+        </section>
+
+				<section>
+          <div>A Simple Stream Server</div>
+          <img height='600px' src='images/simple_stream_server.png'></img>
+        </section>
+
+				<section>
+          <div>A Simple Stream Client</div>
+          <img height='600px' src='images/simple_stream_client.png'></img>
+        </section>
+
+				<section>
+          <h2>New idea: Write it in Rust and compile to a C library</h2>
+        </section>
+
+				<section>
+          <h2>[Rust from C] FFI Resources</h2>
+          <ul>
+            <li>
+              <a href='https://youtu.be/x9acx2zgx4Q'>RustConf 2018 - Embedding Rust in C/C++ by Katharina</a>
+            </li>
+            <li>
+              <a href='http://jakegoulding.com/rust-ffi-omnibus/'>The Rust FFI Omnibus</a>
+            </li>
+          </ul>
+        </section>
+
+				<section>
+          <h2>The Rust paradox</h2>
+        </section>
+
+				<section>
+          <h2>Rust: Making easy things hard so that hard things can be easy</h2>
+        </section>
+
+				<section>
+          <h2>Overall experience: This feels like cheating</h2>
+        </section>
+
+				<section>
+          <h2>TODO: rust server/client examples here</h2>
+        </section>
+        
+				<section>
+          <h2>TODO: basic ffi example here</h2>
+        </section>
+
+				<section>
+          <h2>Demo</h2>
+        </section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
