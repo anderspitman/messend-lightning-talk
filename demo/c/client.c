@@ -6,7 +6,6 @@ int main() {
 
     MessendMessage* message = messend_message_create((uint8_t*)"Hi there from C", 15);
 
-    //messend_peer_send_message_new(peer, (uint8_t*)"Hi there from C", 15);
     messend_peer_send_message(peer, *message);
     messend_message_free(message);
 
